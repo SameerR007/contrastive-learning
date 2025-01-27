@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=0.5app_hyperbolic
-#SBATCH --output=0.5app_hyperbolic_%j.out
-#SBATCH --error=0.5app_hyperbolic_%j.err
+#SBATCH --job-name=app_effective
+#SBATCH --output=app_effective_%j.out
+#SBATCH --error=app_effective_%j.err
 #SBATCH --time=03:30:00
 #SBATCH --partition=mcml-dgx-a100-40x8 
 #SBATCH --qos=mcml  
@@ -15,4 +15,4 @@ module load cuda/12.4
 source myenv/bin/activate
 
 # Run the Jupyter Notebook using papermill
-papermill 0.5app_hyperbolic.ipynb 0.5app_hyperbolic_output.ipynb
+papermill app_effective.ipynb app_effective_output.ipynb
